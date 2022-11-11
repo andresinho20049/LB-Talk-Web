@@ -1,7 +1,7 @@
 
 export interface IReqJob {
     config: IJobConfig,
-    data_file: IDataFile
+    data_file: string
 }
 
 export interface IDataFile {

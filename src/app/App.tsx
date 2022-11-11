@@ -1,10 +1,14 @@
-import React from 'react'
-import { RecordPageExample } from "./pages/RecordPageExample";
+import { darkScrollbar, GlobalStyles } from "@mui/material";
+import { AppThemeProvider } from "./context";
+import { Rotas } from "./routes/Rotas";
 
 
 const App = () => {
   return (
-    <RecordPageExample />
+    <AppThemeProvider>
+      <GlobalStyles styles={{...darkScrollbar()}} />
+      <Rotas />
+    </AppThemeProvider>
   );
 }
 
