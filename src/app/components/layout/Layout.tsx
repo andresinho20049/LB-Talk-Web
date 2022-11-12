@@ -13,13 +13,11 @@ export const Layout = ({children}: ILayoutProps) => {
             direction={'column'}
             justifyContent={'space-between'}
             alignItems={'center'}
-            spacing={1}
+            spacing={0}
+            bgcolor={(theme) => theme.palette.background.default}
         >
             <MenuAppBar />
-
-            <Box flex={4} alignItems={'center'} justifyContent={'center'}>
-                {children}
-            </Box>
+            {children}
         </Stack>
     )
 }

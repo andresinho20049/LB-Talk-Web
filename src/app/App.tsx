@@ -1,16 +1,15 @@
 import { darkScrollbar, GlobalStyles } from "@mui/material";
-import { Layout } from "./components";
-import { AppThemeProvider } from "./context";
+import { AppThemeProvider, LanguagemProvider } from "./context";
 import { Rotas } from "./routes/Rotas";
 
 
 const App = () => {
   return (
     <AppThemeProvider>
-      <GlobalStyles styles={{ ...darkScrollbar() }} />
-      <Layout>
+      <LanguagemProvider>
+        <GlobalStyles styles={{ ...darkScrollbar() }} />
         <Rotas />
-      </Layout>
+      </LanguagemProvider>
     </AppThemeProvider>
   );
 }

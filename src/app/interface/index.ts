@@ -1,1 +1,1 @@
-export * from './ISpeechToText'
+export * from './ISpeechToText';
