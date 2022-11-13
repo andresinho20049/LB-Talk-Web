@@ -8,10 +8,8 @@ document.addEventListener("DOMContentLoaded", function (e) {
     const clickAccessInterval = setInterval(() => {
 
         const vwAccessBtn = document.querySelector('[vw-access-button]');
-        console.log('vwAccess', vwAccessBtn);
         if (!!vwAccessBtn) {
             vwAccessBtn?.click();
-            console.log("VwAccess entrou if");
             clearInterval(clickAccessInterval);
         }
     }, 1000)
@@ -20,9 +18,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         customPlayer();
 
         const vpwControls = document.getElementsByClassName('vpw-controls')[0]
-        console.log('DivGame', vpwControls);
         if (!!vpwControls) {
-            console.log("Chamou stop interval");
             clearInterval(intervalCustom);
 
             const isPortrait = window.matchMedia('(orientation: portrait)').matches;
