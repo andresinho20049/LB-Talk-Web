@@ -1,13 +1,11 @@
 import MenuIcon from '@mui/icons-material/Menu';
 import SpatialAudioOffIcon from '@mui/icons-material/SpatialAudioOff';
 import { AppBar, Avatar, Box, Container, Divider, IconButton, Menu, Toolbar, Tooltip, Typography } from '@mui/material';
+import { useMenuAppBar } from '../../hooks/useMenuAppBar';
 import { pages } from '../../routes/Rotas';
 import { LanguageSetting } from './LanguageSetting';
 import { MenuItemAppBar } from './MenuItemAppBar';
 import { ToggleThemeSetting } from './ToggleThemeSetting';
-import { useMenuAppBar } from './useMenuAppBar';
-
-const settings = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 export const MenuAppBar = () => {
 
@@ -98,7 +96,7 @@ export const MenuAppBar = () => {
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
-                <Avatar alt="Remy Sharp" src="unnamed.jpg" />
+                <Avatar alt="André" src="./img/unnamed.jpg" />
               </IconButton>
             </Tooltip>
             <Menu

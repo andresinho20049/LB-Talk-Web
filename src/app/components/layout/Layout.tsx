@@ -15,6 +15,7 @@ export const Layout = ({children}: ILayoutProps) => {
             alignItems={'center'}
             spacing={0}
             bgcolor={(theme) => theme.palette.background.default}
+            height={'100vh'}
         >
             <MenuAppBar />
             {children}
