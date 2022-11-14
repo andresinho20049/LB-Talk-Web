@@ -49,8 +49,6 @@ export const useVlibrasInteractive = () => {
 
     const readTranscript = useCallback((transcript: string) => {
 
-        console.log("Read Transcript", transcript);
-
         if (!validLoad)
             return;
 
