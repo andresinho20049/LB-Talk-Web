@@ -118,7 +118,7 @@ export const MenuAppBar = () => {
               <ToggleThemeSetting />
               <Divider />
               <LanguageSetting isLanguage />
-              <LanguageSetting />
+              {/* <LanguageSetting /> */}
             </Menu>
           </Box>
         </Toolbar>

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material";
+import { Box, ImageList, ImageListItem, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { useVlibrasInteractive } from "../hooks/UseVlibrasInteractive";
 
@@ -11,8 +11,35 @@ export const Home = () => {
     }, []);
 
     return (
-        <Box sx={{display: 'flex', justifyContent: 'space-around', alignItems: 'center', flex: 1, flexDirection: 'column'}}>
-            <Typography>Home</Typography>
+        <Box sx={{
+            flex: 1,
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'center',
+            alignItems: 'center'
+        }}>
+            <ImageList
+            variant="masonry"
+            cols={1}
+        >
+            {itemData.map((item) => (
+                <ImageListItem key={item.img}>
+                    <img src={item.img} alt={item.title} loading='lazy' />
+                </ImageListItem>
+            ))}
+        </ImageList>
+        <Typography variant="h1" sx={{
+            fontFamily: 'Geneva'
+        }}>
+            LB Talks
+        </Typography>
         </Box>
     )
 }
+
+const itemData = [
+    {
+        img: './img/LIBRAS-Transparent.png',
+        title: 'Eu Amo Libras',
+    }
+];

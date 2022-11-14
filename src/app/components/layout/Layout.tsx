@@ -33,8 +33,9 @@ export const Layout = ({ children }: ILayoutProps) => {
             justifyContent={'space-between'}
             alignItems={'center'}
             spacing={0}
+            flex={1}
             bgcolor={(theme) => theme.palette.background.default}
-            height={'100vh'}
+            minHeight={'100vh'}
         >
             <MenuAppBar />
             {children}
