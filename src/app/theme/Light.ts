@@ -1,5 +1,5 @@
 import { createTheme } from "@mui/material";
-import { green, grey, lightBlue, purple, red, yellow } from "@mui/material/colors";
+import { green, grey, lightBlue, lightGreen, purple, red, yellow } from "@mui/material/colors";
 
 
 export const LightTheme = createTheme({
@@ -10,14 +10,14 @@ export const LightTheme = createTheme({
             contrastText: 'black'
         },
         secondary: {
-            main: purple[400],
+            main: lightGreen.A400,
             contrastText: 'black'
         },
         error: {
             main: red[600]
         },
         warning: {
-            main: yellow[600]
+            main: yellow[900]
         },
         info: {
             main: lightBlue[300]
