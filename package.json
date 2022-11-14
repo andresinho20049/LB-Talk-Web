@@ -8,10 +8,17 @@
     "@mui/icons-material": "^5.10.9",
     "@mui/material": "^5.10.13",
     "axios": "^1.1.3",
+    "fs": "^0.0.1-security",
+    "lamejs": "^1.2.1",
+    "mic-recorder": "^4.9.0",
+    "node-polyfill-webpack-plugin": "^2.0.1",
+    "os": "^0.1.2",
+    "os-browserify": "^0.3.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-media-recorder": "^1.6.6",
     "react-router-dom": "^6.4.3",
+    "util": "^0.12.5",
     "web-vitals": "^3.0.4"
   },
   "devDependencies": {

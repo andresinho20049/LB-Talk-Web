@@ -1,7 +1,8 @@
+// import { ReadStream } from 'fs';
 
 export interface IReqJob {
     config: IJobConfig,
-    data_file: string
+    data_file: any
 }
 
 export interface IDataFile {

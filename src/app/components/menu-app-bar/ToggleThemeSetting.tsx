@@ -1,5 +1,4 @@
 import { FormControlLabel, FormGroup, ListItem, styled, Switch } from "@mui/material";
-import { useCallback } from "react";
 import { useAppThemeContext } from "../../context";
 
 

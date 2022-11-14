@@ -1,5 +1,6 @@
 import { IReqJob } from '../../../interface';
 import { ApiForm } from '../ApiConfig';
+import FormData from 'form-data';
 
 
 const job = async (req: IReqJob): Promise<string | Error> => {
@@ -8,7 +9,7 @@ const job = async (req: IReqJob): Promise<string | Error> => {
 
         var form = new FormData();
         form.append('config', JSON.stringify(req.config));
-        form.append('data_file', JSON.stringify(req.data_file));
+        form.append('data_file', req.data_file);
 
         ApiForm.defaults.headers.post['Content-Type'] = 'multipart/form-data';
 
