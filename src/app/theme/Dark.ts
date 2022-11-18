@@ -10,7 +10,7 @@ export const DarkTheme = createTheme({
             contrastText: '#fff'
         },
         secondary: {
-            main: purple[400],
+            main: purple.A200,
             contrastText: '#fff'
         },
         error: {

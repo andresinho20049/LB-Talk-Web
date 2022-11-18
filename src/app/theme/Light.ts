@@ -10,7 +10,7 @@ export const LightTheme = createTheme({
             contrastText: 'black'
         },
         secondary: {
-            main: lightGreen.A400,
+            main: purple.A400,
             contrastText: 'black'
         },
         error: {
