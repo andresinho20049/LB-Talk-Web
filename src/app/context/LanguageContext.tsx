@@ -1,14 +1,16 @@
 import { createContext, ReactNode, useContext, useState } from "react";
 
-export type languageValues = 'pt' | 'en';
+export type LanguageTypes = 'pt' | 'en';
+
+export type ModeTranscriptTypes = 'Fala' | 'Texto';
 
 export interface LanguageContextProps {
     transcript: string,
-    language: languageValues,
-    subtitle: languageValues,
+    language: LanguageTypes,
+    mode: ModeTranscriptTypes,
     setTranscript: (value: string) => void,
-    toggleLanguage: (value: languageValues) => void,
-    toggleSubtitle: (value: languageValues) => void
+    toggleLanguage: (value: LanguageTypes) => void,
+    toggleMode: (value: ModeTranscriptTypes) => void
 }
 
 const LanguageContext = createContext<LanguageContextProps>({} as LanguageContextProps);
@@ -22,17 +24,17 @@ export interface LanguagemContextProviderProps {
 export const LanguagemProvider = ({ children }: LanguagemContextProviderProps) => {
 
     const [transcript, setTranscript] = useState('');
-    const [languageState, setLanguage] = useState<languageValues>('pt');
-    const [subtitleState, setSubtitle] = useState<languageValues>('pt');
+    const [languageState, setLanguage] = useState<LanguageTypes>('pt');
+    const [modeState, setMode] = useState<ModeTranscriptTypes>('Fala');
 
     return (
         <LanguageContext.Provider value={{
             transcript,
             language: languageState,
-            subtitle: subtitleState,
+            mode: modeState,
             setTranscript,
             toggleLanguage: setLanguage,
-            toggleSubtitle: setSubtitle
+            toggleMode: setMode
         }}>
             {children}
         </LanguageContext.Provider>

@@ -1,10 +1,13 @@
-import { Box } from "@mui/material"
 import { useEffect } from "react";
-import { RecordPlayer } from "../components"
+import { Box } from "@mui/material"
+import { useLanguageContext } from "../context";
+import { RecordPlayer, TextTranslate } from "../components"
 import { useVlibrasInteractive } from "../hooks/UseVlibrasInteractive";
 
 
 export const Talks = () => {
+
+    const { mode } = useLanguageContext();
 
     const { openWrapper } = useVlibrasInteractive();
 
@@ -15,14 +18,21 @@ export const Talks = () => {
 
     return (
         <Box sx={
-            {display: 'flex', 
-            justifyContent: 'flex-end', 
-            alignItems: 'center', 
-            flex: 1, 
-            flexDirection: 'column',
-            padding: 2
-        }}> 
-            <RecordPlayer />
+            {
+                display: 'flex',
+                justifyContent: 'flex-end',
+                alignItems: 'center',
+                flex: 1,
+                flexDirection: 'column',
+                padding: 2
+            }}>
+            {mode === 'Fala' && (
+                <RecordPlayer />
+            )}
+
+            {mode === 'Texto' && (
+                <TextTranslate />
+            )}
         </Box>
     )
 }

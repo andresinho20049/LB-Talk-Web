@@ -1,16 +1,12 @@
 import { useCallback } from 'react';
-import ReactDOM from 'react-dom';
 
 
 export const useVlibrasInteractive = () => {
-
-
 
     const validLoad = (): boolean => {
         const vpwControls = document.getElementsByClassName('vpw-controls')[0]
         return !!vpwControls;
     };
-
 
     const openWrapper = useCallback(() => {
 
@@ -49,7 +45,7 @@ export const useVlibrasInteractive = () => {
 
     const readTranscript = useCallback((transcript: string) => {
 
-        if (!validLoad)
+        if (!validLoad || !transcript)
             return;
 
         //@ts-ignore
