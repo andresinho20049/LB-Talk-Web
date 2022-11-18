@@ -1,11 +1,12 @@
-import { createContext, ReactNode, useCallback, useContext, useEffect, useState } from "react"
+import { createContext, ReactNode, useCallback, useContext, useState } from "react";
+import { AlertColor } from "@mui/material/Alert";
 
 
 interface ISnackBarContextData {
     msg: string,
-    showMsg: (msg: string, isError?: boolean) => void,
+    showMsg: (msg: string, severity?: AlertColor | undefined) => void,
     isMsg: boolean,
-    isError: boolean,
+    severity: AlertColor | undefined,
     handleClose: () => void
 }
 
@@ -20,19 +21,19 @@ interface ISnackBarProviderProps {
 export const SnackBarProvider = ({children}:ISnackBarProviderProps) => {
 
     const [msg, setMsg] = useState<string>('');
-    const [isError, setIsError] = useState<boolean>(false);
+    const [severity, setSeverity] = useState<AlertColor>('error');
 
-    const showMsg = useCallback((msg: string, isError = false) => {
+    const showMsg = useCallback((msg: string, severity: AlertColor = 'error') => {
         setMsg(msg);
-        setIsError(isError);
-    }, [msg, isError]);
+        setSeverity(severity);
+    }, [msg, severity]);
 
     const handleClose = useCallback(() => {
         setMsg('');
     }, [msg])
     
     return (
-        <SnackBarContext.Provider value={{msg, showMsg, isMsg: !!msg, isError, handleClose}}>
+        <SnackBarContext.Provider value={{msg, showMsg, isMsg: !!msg, severity, handleClose}}>
             {children}
         </SnackBarContext.Provider>
     )
