@@ -1,13 +1,16 @@
-import MenuIcon from '@mui/icons-material/Menu';
-import SpatialAudioOffIcon from '@mui/icons-material/SpatialAudioOff';
 import { AppBar, Avatar, Box, Container, Divider, IconButton, Menu, Toolbar, Tooltip, Typography } from '@mui/material';
-import { useMenuAppBar } from '../../hooks/useMenuAppBar';
-import { pages } from '../../routes/Rotas';
-import { LanguageSetting } from './LanguageSetting';
-import { MenuItemAppBar } from './MenuItemAppBar';
 import { ToggleThemeSetting } from './ToggleThemeSetting';
+import { useMenuAppBar } from '../../hooks/useMenuAppBar';
+import { LanguageSetting } from './LanguageSetting';
+import { useAppThemeContext } from '../../context';
+import { MenuItemAppBar } from './MenuItemAppBar';
+import MenuIcon from '@mui/icons-material/Menu';
+import { SpeechOrText } from './SpeechOrText';
+import { pages } from '../../routes/Rotas';
 
 export const MenuAppBar = () => {
+
+  const {isDark} = useAppThemeContext();
 
   const { anchorElNav, anchorElUser, handleOpenNavMenu, handleOpenUserMenu, handleCloseNavMenu, handleCloseUserMenu } = useMenuAppBar();
 
@@ -15,7 +18,9 @@ export const MenuAppBar = () => {
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          <SpatialAudioOffIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} />
+          <Box sx={{ display: { xs: 'none', md: 'flex' } }} >
+            <img alt='Logo' src={isDark ? './img/logo-dark.png' : './img/logo.png'} width={30} />
+          </Box>
           <Typography
             variant="h6"
             noWrap
@@ -68,7 +73,9 @@ export const MenuAppBar = () => {
               ))}
             </Menu>
           </Box>
-          <SpatialAudioOffIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} />
+          <Box sx={{ display: { xs: 'flex', md: 'none' } }} >
+            <img alt='Logo' src={isDark ? './img/logo-dark.png' : './img/logo.png'} width={30} />
+          </Box>
           <Typography
             variant="h5"
             noWrap
@@ -117,8 +124,8 @@ export const MenuAppBar = () => {
             >
               <ToggleThemeSetting />
               <Divider />
-              <LanguageSetting isLanguage />
-              {/* <LanguageSetting /> */}
+              <LanguageSetting />
+              <SpeechOrText />
             </Menu>
           </Box>
         </Toolbar>
