@@ -1,7 +1,7 @@
 import { ReactNode } from "react";
-import { Alert, Box, Slide, SlideProps, Snackbar, Stack } from "@mui/material";
-import { MenuAppBar } from "../menu-app-bar/MenuAppBar";
+import { Alert, Slide, SlideProps, Snackbar, Stack } from "@mui/material";
 import { useSnackBarContext } from "../../context/SnackBarContext";
+import { MenuAppBar } from "../menu-app-bar/MenuAppBar";
 
 export interface ILayoutProps {
     children: ReactNode
@@ -9,7 +9,7 @@ export interface ILayoutProps {
 
 const SnackBarApp = () => {
 
-    const { isMsg, msg, isError, handleClose } = useSnackBarContext();
+    const { isMsg, msg, severity, handleClose } = useSnackBarContext();
 
     return (
         <Snackbar
@@ -18,7 +18,7 @@ const SnackBarApp = () => {
             autoHideDuration={5000}
             TransitionComponent={(props: SlideProps) => <Slide {...props} direction="up" />}
         >
-            <Alert onClose={handleClose} severity={isError ? 'error': 'success'}>
+            <Alert onClose={handleClose} severity={severity}>
                 {msg}
             </Alert>
         </Snackbar>
