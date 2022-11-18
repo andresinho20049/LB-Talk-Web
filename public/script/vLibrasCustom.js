@@ -5,6 +5,13 @@ document.addEventListener("DOMContentLoaded", function (e) {
         return;
     }
 
+    setTimeout(() => {
+        startVLibras();
+    }, 1000);
+
+});
+
+function startVLibras() {
     const clickAccessInterval = setInterval(() => {
 
         const vwAccessBtn = document.querySelector('[vw-access-button]');
@@ -12,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
             vwAccessBtn?.click();
             clearInterval(clickAccessInterval);
         }
-    }, 1000)
+    }, 1000);
 
     const intervalCustom = setInterval(() => {
         customPlayer();
@@ -29,8 +36,7 @@ document.addEventListener("DOMContentLoaded", function (e) {
         }
 
     }, 2500);
-
-});
+}
 
 function customPlayer() {
     var divVlibras = document.getElementById('div-vlibras');
