@@ -1,11 +1,11 @@
 import { useMemo, useRef, useCallback } from 'react';
-import MicIcon from '@mui/icons-material/Mic';
-import StopIcon from '@mui/icons-material/Stop';
-import { useRecord } from '../../hooks/UseRecord';
-import { useLanguageContext } from '../../context';
-import { useSpeechToText } from '../../hooks/UseSpeechToText';
 import { Box, Divider, IconButton, Paper, Typography, useMediaQuery, useTheme } from "@mui/material";
 import { useVlibrasInteractive } from '../../hooks/UseVlibrasInteractive';
+import { useSpeechToText } from '../../hooks/UseSpeechToText';
+import { useLanguageContext } from '../../context';
+import { useRecord } from '../../hooks/UseRecord';
+import StopIcon from '@mui/icons-material/Stop';
+import MicIcon from '@mui/icons-material/Mic';
 
 export const RecordPlayer = () => {
 
@@ -15,7 +15,7 @@ export const RecordPlayer = () => {
     const widthV: number = smDown ? 200 : 350;
     const heightV: number = smDown ? 36 : 64;
 
-    const { transcript, setTranscript } = useLanguageContext();
+    const { transcript } = useLanguageContext();
     const { audioFile, audioUrl, isRecording, startRecord, stopRecord } = useRecord();
     const { readTranscript } = useVlibrasInteractive();
 
@@ -25,7 +25,7 @@ export const RecordPlayer = () => {
 
     const handleClose = useCallback(() => {
         stopRecord();
-    }, [isRecording])
+    }, [])
 
     useMemo(() => {
 
@@ -88,8 +88,8 @@ export const RecordPlayer = () => {
             <Box
                 sx={{
                     display: !isRecording ? 'flex' : 'none',
-                    alignItems: 'center',
                     justifyContent: 'space-evenly',
+                    alignItems: 'center',
                 }}
             >
                 <audio style={{ width: widthV, height: heightV }} src={audioUrl} controls />
