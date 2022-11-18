@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# LB Talks
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+LB Talks é um site responsivo, ele contem a funcionalidade de tradução para libras, podendo ser aplicado de 2 diferentes formas.
+ 1. Usuário pode gravar um audio e por meio de API's Speech-to-text é feito a transcrição do audio, após retonado o texto com a fala é chamado serviço do VLibras realizando a tradução para libras.
+ 2. Alterando o modo para texto, o usuário pode digitar e será feito a tradução do texto digitado para libras.
 
-## Available Scripts
+A aplicação foi projetada visando a simplicidade e o aumento da acessibilidade. Muitos brasileiros com deficiência auditiva precisam de auxílio de um intérprete para terem uma comunicação efetiva. Por isso, ao observar um colega de turma que era acompanhado de uma intérprete nas aulas, e ao lembrar que poucos têm os recursos monetários para fazer o mesmo, a ideia proposta nesta monografia foi concebida. Portanto, o aplicativo tem como principal objetivo o auxílio para surdos que precisam se comunicar e realizar tarefas cotidianas, mas que não podem ter o auxílio de um intérprete, mesmo que momentaneamente.
 
-In the project directory, you can run:
 
-### `npm start`
+## MVP
+ - [Web Site (Demo)](https://lb-talk-web.vercel.app/)     
+ - [Apresentação Trailer](https://youtu.be/-PeDpOGSHX8)        
+ - [Apresentação Pitch](https://youtu.be/uaHdhQRv6tI)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
 
-### `npm test`
+## Desenvolvimento
+Este projeto foi iniciado com [npx create-react-app lb-talks-web --template typescript](https://create-react-app.dev/docs/adding-typescript).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Tecnologias utilizadas:
+ - React
+ - Material UI
+ - Speechmatics (API Speech-to-Text)
+ - mic-recorder (Gravar audio)
+ - VLibras
+ 
+## Como iniciar o projeto
+1. Baixe o projeto, executando um git clone
+```git
+git clone https://github.com/andresinho20049/LB-Talk-Web.git
+```
 
-### `npm run build`
+2. Dentro da pasta do projeto digite:
+```node
+npm run start
+# or
+yarn start
+```
+> **Obs:**  
+Para executar esse projeto você ira precisar ter o Node instalado na sua maquina.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+3. Após instalado as dependencias do projeto e gerado o build o mesmo será aberto no seu navegador na url: [http://localhost:3000/](http://localhost:3000/)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Considerações
+A utilização de recursos tecnológicos como smartphones e reconhecimento de fala pode contribuir na inclusão de pessoas com deficiência auditiva no mundo digital e real. E com a maior utilização e aumento da dependência de sistemas digitais, a inclusão de ferramentas assistivas se torna extremamente importante, pois elas reduzem ou eliminam barreiras na experiência de uso de sites e aplicativos.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+> **PROJETO ACADÊMICO**     
+> Curso: Ciência da Computação      
+> Disciplina: Laboratório de Software e Projetos        
+> Contribuintes: [André Carlos](https://www.linkedin.com/in/andresinho20049/) / Felipe Silva / Gabriel dos Santos / Matheus Moreira / Miguel Angelo / Rafael Barbosa
