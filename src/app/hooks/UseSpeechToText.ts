@@ -1,8 +1,7 @@
 import { useCallback } from 'react';
-import { IJobConfig } from '../interface';
+import { useSnackBarContext, useLanguageContext } from '../context';
 import { job, translate } from '../services';
-import { useSnackBarContext } from '../context/SnackBarContext';
-import { useLanguageContext } from './../context/LanguageContext';
+import { IJobConfig } from '../interface';
 
 
 export const useSpeechToText = () => {
@@ -23,7 +22,7 @@ export const useSpeechToText = () => {
         const result = await job({ config, data_file: audioFile });
 
         if (result instanceof Error) {
-            showMsg(result.message, true);
+            showMsg(result.message);
             return null;
         } else {
             return result;
@@ -32,6 +31,8 @@ export const useSpeechToText = () => {
     }, []);
 
     const handleSpeechToText = useCallback((audioFile: File) => {
+
+        showMsg("Iniciando transcrição do audio, por favor aguarde", 'info');
 
         handleJob(audioFile)
             .then((jobId) => {
@@ -48,7 +49,7 @@ export const useSpeechToText = () => {
                     let tentativas = 0;
                     const interval = setInterval(() => {
 
-                        showMsg("Transcrevendo audio");
+                        showMsg("Transcrevendo audio", 'info');
 
                         translate(jobId)
                             .then((res) => {
@@ -56,7 +57,7 @@ export const useSpeechToText = () => {
                                 if (res instanceof Error) {
                                     if (tentativas > 5) {
                                         clearInterval(interval);
-                                        showMsg(res.message, true);
+                                        showMsg('Timeout, API não retornou frase');
                                     }
                                     tentativas++;
                                 } else {
