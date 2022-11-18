@@ -1,5 +1,5 @@
-import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider, ImageList } from "@mui/material";
 import { useCallback, useState } from "react";
+import { Box, Button, Dialog, DialogActions, DialogContent, DialogContentText, DialogTitle, Divider } from "@mui/material";
 import { EstudeImageList } from "./EstudeImageList";
 import { PaperSobre } from "./PaperSobre";
 
@@ -51,7 +51,8 @@ export const Proposta = () => {
                     background: (theme) => theme.palette.mode === 'dark' ? '#888' : theme.palette.background.paper
                 }}>
                     <DialogContentText id="alert-dialog-slide-description">
-                        Assim como o modelo de IA, quando não souber falar alguma palavra, soletre! O importante é começar.
+                        Assim como o modelo de IA, quando não souber falar alguma palavra, soletre! 
+                        O importante é começar.
                     </DialogContentText>
                     <Divider />
                     <EstudeImageList />

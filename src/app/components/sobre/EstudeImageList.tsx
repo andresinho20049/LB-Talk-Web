@@ -8,11 +8,6 @@ export const EstudeImageList = () => {
         >
             {itemData.map((item) => (
                 <ImageListItem key={item.img} cols={item.cols || 1} rows={item.rows || 1}>
-                    {/* <img
-                        {...srcset(item.img, 150, item.rows, item.cols)}
-                        alt={item.title}
-                        loading="lazy"
-                    /> */}
                     <img src={item.img} alt={item.title} loading='lazy' />
                 </ImageListItem>
             ))}

@@ -1,9 +1,10 @@
-import { ThemeProvider } from "@mui/material";
-import { DarkTheme, LightTheme } from "../theme";
-import usePersistedState from "../hooks/UsePersistedState";
 import { createContext, ReactNode, useCallback, useContext, useMemo } from "react";
+import usePersistedState from "../hooks/UsePersistedState";
+import { DarkTheme, LightTheme } from "../theme";
+import { ThemeProvider } from "@mui/material";
 
 interface IAppThemeContextData {
+    isDark: boolean;
     themeName: 'dark' | 'light';
     toggleTheme: () => void;
 }
@@ -41,7 +42,7 @@ export const AppThemeProvider = ({ children }: IAppThemeProviderProps) => {
     }, [themeName]);
 
     return (
-        <AppThemeContext.Provider value={{ themeName, toggleTheme }}>
+        <AppThemeContext.Provider value={{ isDark: themeName === 'dark' , themeName, toggleTheme }}>
             <ThemeProvider theme={theme}>
                 {children}
             </ThemeProvider>

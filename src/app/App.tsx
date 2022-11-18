@@ -1,6 +1,5 @@
+import { AppThemeProvider, LanguagemProvider, SnackBarProvider } from "./context";
 import { darkScrollbar, GlobalStyles } from "@mui/material";
-import { AppThemeProvider, LanguagemProvider } from "./context";
-import { SnackBarProvider } from "./context/SnackBarContext";
 import { Rotas } from "./routes/Rotas";
 
 

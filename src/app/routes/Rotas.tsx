@@ -1,6 +1,6 @@
-import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom"
-import { Layout } from "../components"
-import { Home, Sobre, Talks } from "../pages"
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
+import { Home, Sobre, Talks } from "../pages";
+import { Layout } from "../components";
 
 interface IPagesData {
     to: string

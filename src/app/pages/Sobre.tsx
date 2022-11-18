@@ -1,7 +1,6 @@
-import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useEffect } from "react";
-import { Motivacao } from "../components/sobre/Motivacao";
-import { Proposta } from "../components/sobre/Proposta";
+import { Motivacao, Proposta } from "../components";
+import { Box, useMediaQuery, useTheme } from "@mui/material";
 import { useVlibrasInteractive } from "../hooks/UseVlibrasInteractive";
 
 export const Sobre = () => {

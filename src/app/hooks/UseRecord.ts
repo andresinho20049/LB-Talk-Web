@@ -1,14 +1,14 @@
-import { useSnackBarContext } from './../context/SnackBarContext';
-import MicRecorder from 'mic-recorder';
 import { useCallback, useState } from 'react';
+import { useSnackBarContext } from './../context';
+import MicRecorder from 'mic-recorder';
 
 export const useRecord = () => {
 
     const { showMsg } = useSnackBarContext();
 
     const [isRecording, setIsRecording] = useState<boolean>(false);
-    const [audioUrl, setAudioUrl] = useState<string>('');
     const [audioFile, setAudioFile] = useState<File | null>(null);
+    const [audioUrl, setAudioUrl] = useState<string>('');
 
     const recorder = new MicRecorder({
         encoder: 'wav'
@@ -22,7 +22,7 @@ export const useRecord = () => {
         })
         .catch((e) => {
             console.error(e);
-            showMsg(e?.message || 'Error start record', true);
+            showMsg(e?.message || 'Error start record');
         })
 
     }, []);
@@ -35,7 +35,7 @@ export const useRecord = () => {
             .then(([buffer, blob]) => {
                 setIsRecording(false);
 
-                const file = new File(buffer, 'recording.mp3', {
+                const file = new File(buffer, 'record.mp3', {
                     type: blob.type,
                     lastModified: Date.now()
                 });
@@ -47,7 +47,7 @@ export const useRecord = () => {
 
             }).catch((e) => {
                 console.error(e);
-                showMsg(e?.message || 'Error stop record', true);
+                showMsg(e?.message || 'Error stop record');
             });
 
     }, []);

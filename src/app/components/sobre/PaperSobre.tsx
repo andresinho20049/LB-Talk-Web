@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { Box, Divider, Paper, Typography } from "@mui/material";
+import { Divider, Paper, Typography } from "@mui/material";
 
 export interface IPaperSobreProps {
     title: string,
