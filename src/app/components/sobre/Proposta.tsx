@@ -17,7 +17,7 @@ export const Proposta = () => {
 
     return (
         <>
-            <PaperSobre title="Comunidade e ensino" subTitle="Programa de ensino e apoiadores">
+            <PaperSobre title="Comunidade e ensino" subTitle="Don Anjos">
                 Nossa proposta de melhoria visa uma inclusão maior tanto aos usuários com deficiência auditiva,
                 mas também a pessoas interessadas em contribuir com o projeto, nosso programa de voluntários pretende aplicar meios de incluir e expandir a comunidade
                 de apoiadores.
